@@ -25,7 +25,7 @@ export const Container = styled.div`
 
 export const Spinner = styled.div`
   animation: ${spin} 2s linear infinite;
-  border: 10px solid #08436f;
+  border: 10px solid #fff;
 
   width: 100px;
   height: 100px;

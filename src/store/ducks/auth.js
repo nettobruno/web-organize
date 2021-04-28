@@ -8,11 +8,7 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         token: action.payload.token,
-        cpf: action.payload.cpf,
-        codigoVendedor: action.payload.codigoVendedor,
-        nome: action.payload.nome,
-        email: action.payload.email,
-        pagamentoAdesao: action.payload.pagamentoAdesao,
+        id: action.payload.id,
       };
 
     default:
@@ -20,23 +16,12 @@ export default function reducer(state = initialState, action) {
   }
 }
 
-export function login(
-  token,
-  cpf,
-  codigoVendedor,
-  nome,
-  email,
-  pagamentoAdesao
-) {
+export function login(token, id) {
   return {
     type: 'LOGIN',
     payload: {
       token,
-      cpf,
-      codigoVendedor,
-      nome,
-      email,
-      pagamentoAdesao,
+      id,
     },
   };
 }
