@@ -1,8 +1,11 @@
 // Dependencies
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
+import api from '../../services/api';
 
 // Components
 import SimpleInput from '../../components/SimpleInput';
+import { showToast } from '../../components/Alert';
+import Loader from '../../components/Loader';
 
 // Imagens
 import imageGithub from '../../assets/github.svg';
@@ -18,13 +21,55 @@ import {
 
 function Contact() {
   const formRef = useRef();
+  const [loader, setLoader] = useState(false);
 
-  async function handleSubmit(data) {
-    console.log(data);
+  async function handleSubmit(data, { reset }) {
+    setLoader(true);
+    try {
+      api
+        .post('send-email/store', {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        })
+        .then((response) => {
+          if (response.data.error) {
+            showToast({
+              type: 'error',
+              message: response.data.error,
+            });
+          }
+
+          if (response.data.message) {
+            showToast({
+              type: 'success',
+              message: response.data.message,
+            });
+          }
+          setLoader(false);
+          reset();
+        })
+        .catch((err) => {
+          showToast({
+            type: 'error',
+            message: err.response.data.message,
+          });
+          setLoader(false);
+          reset();
+        });
+    } catch (err) {
+      console.log(err);
+      showToast({
+        type: 'error',
+        message: 'Algum erro interno aconteceu. Tente novamente mais tarde',
+      });
+      setLoader(false);
+    }
   }
 
   return (
     <Container>
+      <Loader loader={loader} />
       <div className="container">
         <Content>
           <h1>Gostou do Projeto?</h1>
@@ -48,7 +93,7 @@ function Contact() {
                 <img src={imageGithub} alt="" />
               </CircleGithub>
               <p>
-                Feito com ❤️ por{' '}
+                Feito com ❤️ por
                 <a
                   href="https://brunonetto.vercel.app/"
                   target="_blank"
