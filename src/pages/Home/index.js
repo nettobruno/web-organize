@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import api from '../../services/api';
 
 // Components
+import MenuHamburguer from '../../components/MenuHamburguer';
 import SimpleInput from '../../components/SimpleInput';
 import { showToast } from '../../components/Alert';
 import Loader from '../../components/Loader';
@@ -157,6 +158,7 @@ function Home() {
 
   return (
     <Container>
+      <MenuHamburguer />
       <div className="container">
         <Loader loader={loader} />
 

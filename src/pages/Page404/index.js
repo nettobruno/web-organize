@@ -2,6 +2,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
+// Components
+import MenuHamburguer from '../../components/MenuHamburguer';
+
 // Imagens
 import image404 from '../../assets/404.svg';
 
@@ -17,6 +20,8 @@ function Page404() {
 
   return (
     <Container>
+      <MenuHamburguer />
+
       <div className="container">
         <Content>
           <div className="texts">

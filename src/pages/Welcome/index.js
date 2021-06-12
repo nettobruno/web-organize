@@ -1,6 +1,9 @@
 // Dependencies
 import React from 'react';
 
+// Components
+import MenuHamburguer from '../../components/MenuHamburguer';
+
 // Images
 import firstImage from '../../assets/first.svg';
 import secondImage from '../../assets/second.svg';
@@ -15,6 +18,8 @@ import { Container, Section, Content, BlockTexts, BlockImage } from './styles';
 function Welcome() {
   return (
     <Container>
+      <MenuHamburguer />
+
       <Section className="bg-yellow">
         <div className="container">
           <Content>

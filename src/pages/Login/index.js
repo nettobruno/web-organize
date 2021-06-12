@@ -6,6 +6,7 @@ import * as userActions from '../../store/ducks/auth';
 import api from '../../services/api';
 
 // Components
+import MenuHamburguer from '../../components/MenuHamburguer';
 import SimpleInput from '../../components/SimpleInput';
 import { showToast } from '../../components/Alert';
 import Loader from '../../components/Loader';
@@ -71,22 +72,25 @@ function Login() {
   }
 
   return (
-    <Container>
-      <Loader loader={loader} />
-      <BlockForm>
-        <h2>Entrar</h2>
-        <FormContent ref={formRef} onSubmit={handleSubmit}>
-          <SimpleInput name="email" placeholder="E-mail" type="email" />
-          <SimpleInput name="password" placeholder="Senha" type="password" />
-          <button type="submit">Entrar</button>
-          <a href="/register">Não tem uma conta? Cadastrar</a>
-        </FormContent>
-      </BlockForm>
+    <div>
+      <MenuHamburguer />
+      <Container>
+        <Loader loader={loader} />
+        <BlockForm>
+          <h2>Entrar</h2>
+          <FormContent ref={formRef} onSubmit={handleSubmit}>
+            <SimpleInput name="email" placeholder="E-mail" type="email" />
+            <SimpleInput name="password" placeholder="Senha" type="password" />
+            <button type="submit">Entrar</button>
+            <a href="/register">Não tem uma conta? Cadastrar</a>
+          </FormContent>
+        </BlockForm>
 
-      <BlockImage>
-        <img src={loginImage} alt="" />
-      </BlockImage>
-    </Container>
+        <BlockImage>
+          <img src={loginImage} alt="" />
+        </BlockImage>
+      </Container>
+    </div>
   );
 }
 

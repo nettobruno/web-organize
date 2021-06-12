@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 
 // Components
+import MenuHamburguer from '../../components/MenuHamburguer';
+
 import SimpleInput from '../../components/SimpleInput';
 import { showToast } from '../../components/Alert';
 import Loader from '../../components/Loader';
@@ -64,23 +66,26 @@ function Register() {
   }
 
   return (
-    <Container>
-      <Loader loader={loader} />
-      <BlockForm>
-        <h2>Cadastrar</h2>
-        <FormContent ref={formRef} onSubmit={handleSubmit}>
-          <SimpleInput name="name" placeholder="Nome" type="text" />
-          <SimpleInput name="email" placeholder="E-mail" type="email" />
-          <SimpleInput name="password" placeholder="Senha" type="password" />
-          <button type="submit">Cadastrar</button>
-          <a href="/login">Já tem uma conta? Entrar</a>
-        </FormContent>
-      </BlockForm>
+    <div>
+      <MenuHamburguer />
+      <Container>
+        <Loader loader={loader} />
+        <BlockForm>
+          <h2>Cadastrar</h2>
+          <FormContent ref={formRef} onSubmit={handleSubmit}>
+            <SimpleInput name="name" placeholder="Nome" type="text" />
+            <SimpleInput name="email" placeholder="E-mail" type="email" />
+            <SimpleInput name="password" placeholder="Senha" type="password" />
+            <button type="submit">Cadastrar</button>
+            <a href="/login">Já tem uma conta? Entrar</a>
+          </FormContent>
+        </BlockForm>
 
-      <BlockImage>
-        <img src={registerImage} alt="" />
-      </BlockImage>
-    </Container>
+        <BlockImage>
+          <img src={registerImage} alt="" />
+        </BlockImage>
+      </Container>
+    </div>
   );
 }
 

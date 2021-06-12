@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import api from '../../services/api';
 
 // Components
+import MenuHamburguer from '../../components/MenuHamburguer';
 import SimpleInput from '../../components/SimpleInput';
 import { showToast } from '../../components/Alert';
 import Loader from '../../components/Loader';
@@ -69,6 +70,8 @@ function Contact() {
 
   return (
     <Container>
+      <MenuHamburguer />
+
       <Loader loader={loader} />
       <div className="container">
         <Content>
