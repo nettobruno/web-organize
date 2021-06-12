@@ -27,7 +27,7 @@ function Welcome() {
               <h1>Organize-se</h1>
               <div>
                 <h2>Anda meio perdido?</h2>
-                <p>Talvez falte um pouco de organização nessa rotina em.</p>
+                <p>Talvez falte um pouco de organização na sua rotina.</p>
                 <p>Vamos dar um jeito nisso!</p>
               </div>
             </BlockTexts>
@@ -47,12 +47,15 @@ function Welcome() {
             </BlockImage>
 
             <BlockTexts>
-              <h2>Se mantenha atualizado</h2>
+              <h2>Não perca nada</h2>
               <p>
                 O Mundo atual é muito corrido, cheio de coisas novas, e a cada
                 dia sai alguma novidade.
               </p>
-              <p>Precisamos ficar sempre atentos para não perder nada.</p>
+              <p>
+                Precisamos ficar sempre atentos para não perder a constante
+                evolução de tudo que está a nossa volta.
+              </p>
             </BlockTexts>
           </Content>
         </div>
@@ -126,7 +129,7 @@ function Welcome() {
             <BlockTexts>
               <h3>Bora Anotar</h3>
               <p>
-                Nós vamo te ajudar a manter a produtividade e organização em
+                Nós vamos te ajudar a manter a produtividade e organização em
                 alta. Faça seu login, e começe a mudança no seu dia a dia
               </p>
 
